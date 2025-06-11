@@ -17,3 +17,11 @@ create table Produtos(
     Quantidade int not null
 );
 
+select * from Usuarios;
+select * from Produtos;
+
+insert into Usuarios(IdUser, Nome, Email, Senha)
+			values(1, "João", "joaodasdores@gmail.com", "Password");
+
+insert into Produtos(IdProd, Nome, Descricao, Preco, Quantidade)
+			values(1, "Produto", "Um produto", 10, 5);
