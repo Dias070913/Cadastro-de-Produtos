@@ -44,6 +44,14 @@ namespace ProjetoCadastroDeProdutos.Controllers
              Retorna a View de Cadastro novamente, passando o objeto Usuario com os erros de validação.
              Isso permite que a View exiba os erros para o usuário corrigir o formulário.*/
             return View(produto);
+        }
+
+            public IActionResult Index()
+        {
+            /* Retorna a View padrão associada a esta Action,
+            passando como modelo a lista de todos os produtos obtido do repositório.*/
+            return View(_produtoRepositorio.TodosProdutos());
+        }
 
         }
     }
