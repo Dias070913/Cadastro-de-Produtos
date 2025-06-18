@@ -68,7 +68,7 @@ namespace ProjetoCadastroDeProdutos.Repositorio
                     Produtolist.Add(
                                 new Produto
                                 {
-                                    Id = Convert.ToInt32(dr["Id"]), // Converte o valor da coluna "codigo" para inteiro
+                                    Id = Convert.ToInt32(dr["Id"]), // Converte o valor da coluna "Id" para inteiro
                                     Nome = dr["Nome"].ToString(), // Converte o valor da coluna "nome" para string
                                     Descricao = dr["Descricao"].ToString(), // Converte o valor da coluna "Descricao" para string
                                     Preco = Convert.ToDecimal(dr["Preco"]), // Converte o valor da coluna "Preco" para string
@@ -89,10 +89,10 @@ namespace ProjetoCadastroDeProdutos.Repositorio
                 // Abre a conexão com o banco de dados MySQL
                 conexao.Open();
                 // Cria um novo comando SQL para selecionar um registro da tabela 'cliente' com base no código
-                MySqlCommand cmd = new MySqlCommand("SELECT * from Produtos where IdProd=@IdProd ", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * from Produtos where Id=@Id ", conexao);
 
                 // Adiciona um parâmetro para o código a ser buscado, definindo seu tipo e valor
-                cmd.Parameters.AddWithValue("@IdProd", Id);
+                cmd.Parameters.AddWithValue("@Id", Id);
 
                 // Cria um adaptador de dados (não utilizado diretamente para ExecuteReader)
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

@@ -36,8 +36,8 @@ namespace ProjetoCadastroDeProdutos.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Autenticação bem-sucedida
-                // Redireciona o usuário para a action "Index" do Controller "Cliente".
-                return RedirectToAction("Cliente", "Cliente");
+                // Redireciona o usuário para a action "Index" do Controller "Produtos".
+                return RedirectToAction("Index", "Produtos");
             }
             /* Se a autenticação falhar (usuário não encontrado ou senha incorreta):
              Adiciona um erro ao ModelState. ModelState armazena o estado do modelo e erros de validação.
